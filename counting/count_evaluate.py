@@ -27,7 +27,7 @@ def main():
         "-c", "--content",
         type=str,
         required=True,
-        help="The content (substring) for parity checking."
+        help="The content (substring) to evaluate."
     )
 
     parser.add_argument(
