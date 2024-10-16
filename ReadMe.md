@@ -60,6 +60,6 @@ python -m counting.count_experiment -d "path_to_dataset" -c "a" -e 3 -s
 # Evaluate experiment results
 # -d: Path to the dataset used for the experiment
 # -p: Path to the result file to be evaluated
-# -c: The target character that was counted (e.g., 'a')
-python -m counting.evaluate -d "path_to_dataset" -p "path_to_result_file" -c a
+# -c: The target character that was counted (e.g., "a")
+python -m counting.evaluate -d "path_to_dataset" -p "path_to_result_file" -c "a"
 ```
