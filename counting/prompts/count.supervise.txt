@@ -1,0 +1,12 @@
+Task: Count the number of occurrences of the substring '{substring}' in the given string step by step. Do not use bold font in the response.
+
+Instructions:
+
+    Iterate through the string and count each occurrence of the substring.
+    Use a counter to keep track of how many times the substring appears.
+    Output your step-by-step counting process.
+    Conclude with: 'Result: ' followed by the number.
+
+String: {sample}
+
+Response:
