@@ -1,0 +1,5 @@
+Determine the number of appearances of '{substring}'s in the string below. Think step by step. Directly output 'Result: ' followed by the counted number. Do not use bold font in the response.
+
+String: {sample}
+
+Response:

@@ -67,11 +67,17 @@ if __name__ == "__main__":
         required=True,
         help="The type of experiment."
     )
+    
+    parser.add_argument(    
+        "-o", "--cot",
+        action='store_true',
+        help="Enable CoT."
+    )
 
     parser.add_argument(    
-        "-s", "--supervised",
+        "-s", "--supervised_cot",
         action='store_true',
-        help="Use supervised CoT."
+        help="Enable supervised CoT."
     )
 
     parser.add_argument(    
@@ -118,9 +124,15 @@ if __name__ == "__main__":
         dataset = read_jsonl(args.dataset)
 
     docs = {}
+    
+    if args.cot or args.supervised_cot:
+        assert (args.cot and args.supervised_cot) is False, "You cannot enable both CoT and supervised CoT."
 
-    if args.supervised:
+    if args.supervised_cot:
         with open(f"counting/prompts/count.supervise.txt", 'r') as file:
+            prompt = file.read().strip()
+    elif args.cot:
+        with open(f"counting/prompts/count.cot.txt", 'r') as file:
             prompt = file.read().strip()
     else:
         with open(f"counting/prompts/count.txt", 'r') as file:

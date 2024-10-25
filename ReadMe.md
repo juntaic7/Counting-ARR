@@ -1,4 +1,4 @@
-# Role of Tokenization in the Counting Ability of Language Models
+# Impact of Tokenization in the Counting Ability of Language Models
 
 This project explores the role of tokenization in the counting abilities of various language models. Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. The different methods of tokenization are illustrated below, showing how they affect the representation of a simple string when counting the number of occurrences of the character 'a'.
 
