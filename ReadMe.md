@@ -66,13 +66,12 @@ python -m counting.evaluate -d "path_to_dataset" -p "path_to_result_file" -c "a"
 
 ## Citation
 
-@misc{zhang2024countingabilitylargelanguage,
-      title={Counting Ability of Large Language Models and Impact of Tokenization}, 
-      author={Xiang Zhang and Juntai Cao and Chenyu You},
-      year={2024},
-      eprint={2410.19730},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2410.19730}, 
+@misc{zhang2024counting,
+  title         = "Counting Ability of Large Language Models and Impact of Tokenization",
+  author        = "Xiang Zhang and Juntai Cao and Chenyu You",
+  year          = 2024,
+  eprint        = "2410.19730",
+  archivePrefix = "arXiv",
+  primaryClass  = "cs.CL",
+  url           = "https://arxiv.org/abs/2410.19730"
 }
-
