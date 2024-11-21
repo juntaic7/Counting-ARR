@@ -64,7 +64,7 @@ python -m counting.count_experiment -d "path_to_dataset" -c "a" -e 3 -s
 python -m counting.evaluate -d "path_to_dataset" -p "path_to_result_file" -c "a"
 ```
 
-## Citation
+<!-- ## Citation
 
 ```bibtex
 @misc{zhang2024counting,
@@ -75,4 +75,4 @@ python -m counting.evaluate -d "path_to_dataset" -p "path_to_result_file" -c "a"
   archivePrefix = {arXiv},
   primaryClass  = {cs.CL},
   url           = {https://arxiv.org/abs/2410.19730}
-}
+} -->
