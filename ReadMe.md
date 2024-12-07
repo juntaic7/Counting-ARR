@@ -1,8 +1,6 @@
 # The Role of Tokenization in Inductive Counting for Large Language Models: A Theoretical Analysis
 
-<!-- This is the official repository for paper [Counting Ability of Large Language Models and Impact of Tokenization](https://arxiv.org/pdf/2410.19730).-->
-
-This project explores the role of tokenization in the counting abilities of large language models. Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. The different methods of tokenization are illustrated below, showing how they affect the representation of a simple string when counting the number of occurrences of the characters.  
+This project investigates the impact of tokenization on the inductive counting tasks performed by large language models. Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. The different methods of tokenization are illustrated below, showing how they affect the representation of a simple string when counting the number of occurrences of the characters.  
 
 ## Counting Example
 
@@ -65,16 +63,3 @@ python -m counting.count_experiment -d "path_to_dataset" -c "a" -e 3 -s
 # -c: The target character that was counted (e.g., "a")
 python -m counting.evaluate -d "path_to_dataset" -p "path_to_result_file" -c "a"
 ```
-
-<!-- ## Citation
-
-```bibtex
-@misc{zhang2024counting,
-  title         = {Counting Ability of Large Language Models and Impact of Tokenization},
-  author        = {Xiang Zhang and Juntai Cao and Chenyu You},
-  year          = {2024},
-  eprint        = {2410.19730},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CL},
-  url           = {https://arxiv.org/abs/2410.19730}
-} -->
