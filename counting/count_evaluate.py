@@ -4,6 +4,7 @@ import json
 import os
 from agents.claude_agents import retrieve_results
 
+# The evaluation script for the counting experiment can be applied to the results from GPT/Claude/Qwen. Qwen has the same output format as GPT
 def main():
     parser = argparse.ArgumentParser(description="Calculate accuracy.")
     parser.add_argument(
@@ -34,7 +35,7 @@ def main():
         "-a", "--agent",
         type=str,
         default="gpt",
-        choices=["gpt", "claude", "qwen"],
+        choices=["gpt", "claude"],
         help="The foundation model for evaluation."
     )
     
@@ -52,17 +53,16 @@ def main():
                 if completion.rfind("Result: ") != -1:
                     last_result_index = completion.rfind("Result: ")
                     padding = len("Result: ")
+                    result_str = completion[last_result_index + padding:].strip()
+                    try:
+                        preds[id] = int(result_str)
+                    except (ValueError, TypeError) as e:
+                        print(f"Error converting result_str to int for ID {id}: {e}. Setting prediction to 0.")
+                        preds[id] = 0
                 else:  
+                    print(f"Warning: 'Result:' not found in response for ID {id}.")
                     print(f"Completion: {repr(completion)}")
-                    raise Exception(f"'Result:' not found in response for ID {id}. Please check the response and revise prompt template.")
-                
-                result_str = completion[last_result_index + padding:].strip()
-
-                try:
-                    preds[id] = int(result_str)
-                except (ValueError, TypeError) as e:
-                    print(f"Error converting result_str to int for ID {id}: {e}. Setting prediction to 0.")
-                    pass
+                    preds[id] = 0
         case "claude":
             if args.batch is not None:
                 results = retrieve_results(args.batch, args.path)
