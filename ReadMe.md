@@ -6,7 +6,7 @@ This project investigates the impact of tokenization on the inductive counting t
 
 ## Counting Example
 
-The following example demonstrates how various tokenization approaches can impact the character count of a simple string.
+The following example demonstrates how various tokenization approaches can impact the character counting (e.g., counting the number of 'a's) in a simple string.
 
 ### The String Variations
 
