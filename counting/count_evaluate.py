@@ -2,7 +2,7 @@ import argparse
 from util import read_jsonl
 import json
 import os
-from agents.anthropic_agents import retrieve_results
+from agents.claude_agents import retrieve_results
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate accuracy.")
@@ -10,12 +10,12 @@ def main():
         "-p", "--path",
         type=str,
         required=True,
-        help="Path of batch_output file from GPT/Anthropic, or path to save the batch results from Anthropic if batch id is provided."
+        help="Path of batch_output file from GPT/claude, or path to save the batch results from claude if batch id is provided."
     )
     parser.add_argument(
         "-b", "--batch",
         type=str,
-        help="The batch id from Anthropic."
+        help="The batch id from claude."
     )
     parser.add_argument(
         "-d", "--dataset",
@@ -33,8 +33,8 @@ def main():
     parser.add_argument(
         "-a", "--agent",
         type=str,
-        default="openai",
-        choices=["openai", "anthropic"],
+        default="gpt",
+        choices=["gpt", "claude", "qwen"],
         help="The foundation model for evaluation."
     )
     
@@ -44,7 +44,7 @@ def main():
     preds = {}
     dataset = read_jsonl(args.dataset)
     match args.agent:
-        case "openai":
+        case "gpt":
             results = read_jsonl(args.path)
             for r in results:
                 id = int(r["custom_id"].split("-")[1])
@@ -63,7 +63,7 @@ def main():
                 except (ValueError, TypeError) as e:
                     print(f"Error converting result_str to int for ID {id}: {e}. Setting prediction to 0.")
                     pass
-        case "anthropic":
+        case "claude":
             if args.batch is not None:
                 results = retrieve_results(args.batch, args.path)
             else:

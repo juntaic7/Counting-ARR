@@ -2,18 +2,20 @@ OPENAI_API_KEY = "YOUR-OPENAI-API-KEY"
 
 ANTHROPIC_API_KEY = "YOUR-ANTHROPIC-API-KEY"
 
+DASHSCOPE_API_KEY = "sk-a24714f6e84c48408e508ba184e7d2ee"
+
 gpt_batch_request_template = {
     "custom_id": "", 
     "method": "POST", 
     "url": "/v1/chat/completions",
     "body": {"model": "",
             "messages": [{"role": "system", "content": ""}, {"role": "user", "content": ""}],
-            "max_tokens": 1000}}
+            "max_tokens": 10240}}
 claude_batch_request_template = {
     "custom_id": "",
     "params": {
         "model": "claude-3-5-sonnet-20240620",
-        "max_tokens": 100,
+        "max_tokens": 8192,
         "messages": [
                     {
                         "role": "user",
@@ -22,6 +24,17 @@ claude_batch_request_template = {
                 ],
             },
         }
+qwen_batch_request_template = {
+    "custom_id": "request-1", 
+    "method": "POST", 
+    "url": "/v1/chat/completions", 
+    "body": {"model": "qwen-turbo", 
+            "messages": [
+                {"role": "system", "content": "You are a helpful assistant."}, 
+                {"role": "user", "content": "What is 2+2?"}]
+                }
+        }
+    
 
 import json
 

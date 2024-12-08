@@ -1,8 +1,7 @@
 import random
 import argparse
 import json
-from agents import gpt_agents as gpt
-from agents import anthropic_agents as anthropic
+from agents import gpt_agents as gpt, claude_agents as claude, qwen_agents as qwen
 from util import read_jsonl
 
 def generate_string(min_len: int, max_len: int, letters: str="ab") -> str:
@@ -82,8 +81,8 @@ if __name__ == "__main__":
 
     parser.add_argument(    
         "-a", "--agent",
-        default="openai",
-        choices=["openai", "anthropic"],
+        default="gpt",
+        choices=["gpt", "claude", "qwen"],
         help="Choose foundation model."
     )
 
@@ -152,12 +151,16 @@ if __name__ == "__main__":
             for line in dataset:
                 docs[str(line["id"])] = prompt.format(sample=' '.join(line["sample"]), substring = args.content)
 
-    if args.agent == "openai":
+    if args.agent == "gpt":
         gpt.create_requests(docs=docs, prompt="{doc}", model=args.model if args.model else "gpt-4o-mini")
         gpt.send_requests()
-        print(f"Requests sent to evaluate counting ability for {args.content}. Please download the batch_output file from the OpenAI API dashboard.")
-    else:
-        anthropic.create_requests(docs=docs, prompt="{doc}", model=args.model if args.model else "claude-3-5-sonnet-20240620")
-        batch_id = anthropic.send_requests()
+        print(f"Requests sent to evaluate counting ability for {args.content}. Please download the batch_output file from the gpt API dashboard.")
+    elif args.agent == "claude":
+        claude.create_requests(docs=docs, prompt="{doc}", model=args.model if args.model else "claude-3-5-sonnet-20240620")
+        batch_id = claude.send_requests()
         print(f"Requests sent to evaluate counting ability for {args.content}. Please check the batch_output file via batch id:\n{batch_id}.")
-    
+    elif args.agent == "qwen":
+        qwen.create_requests(docs=docs, prompt="{doc}", model=args.model if args.model else "qwen-turbo")
+        batch_id = qwen.send_requests()
+        print(f"Requests sent to evaluate counting ability for {args.content}. Please check the batch_output file via batch id:\n{batch_id}.")
+        

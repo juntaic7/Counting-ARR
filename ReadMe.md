@@ -1,6 +1,6 @@
 # The Role of Tokenization in Inductive Counting for Large Language Models: A Theoretical Analysis
 
-This project investigates the impact of tokenization on the inductive counting tasks performed by large language models. Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. The different methods of tokenization are illustrated below, showing how they affect the representation of a simple string when counting the number of occurrences of the characters.  
+This project investigates the impact of tokenization on the inductive counting tasks performed by large language models.  Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. The different methods of tokenization are illustrated below, showing how they affect the representation of a simple string when counting the number of occurrences of the characters.  
 
 ## Counting Example
 
