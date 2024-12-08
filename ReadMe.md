@@ -1,12 +1,14 @@
 # Counting Conundrum: How Tokenization Impedes Basic Reasoning in Large Language Models
 
-This project investigates the impact of tokenization on the inductive counting tasks performed by large language models.  Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. The different methods of tokenization are illustrated below, showing how they affect the representation of a simple string when counting the number of occurrences of the characters.  
+This project investigates the impact of tokenization on the inductive counting tasks performed by large language models.  Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. Different large language models may use different tokenization methods, which can affect their performance on counting tasks.
+
+![Tokenization Example Long](./tokenizations_long.png)
 
 ## Counting Example
 
-In this example, we count the number of times the character "a" appears in different tokenized forms of the same string.
+The following example demonstrates how various tokenization approaches can impact the character count of a simple string.
 
-### The String Variations:
+### The String Variations
 
 - **(a) Original String**: `abbab`
 - **(b) Spaced String**: `a b b a b`
