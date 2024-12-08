@@ -24,11 +24,11 @@ def main():
     
     args = parser.parse_args()
     if args.agent == "claude":
-        from agents.claude_batch_agents import retrieve_results
+        from agents.claude_agents import retrieve_results
     elif args.agent == "gpt":
-        from agents.gpt_batch_agents import retrieve_results
+        from agents.gpt_agents import retrieve_results
     elif args.agent == "qwen":
-        from agents.qwen_batch_agents import retrieve_results
+        from agents.qwen_agents import retrieve_results
     retrieve_results(args.batch_id, args.path)
     print(f"Batch results of job {args.batch_id} successfully saved to {args.path}.")
     
