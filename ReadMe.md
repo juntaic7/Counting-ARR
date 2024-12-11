@@ -38,7 +38,8 @@ The figure below illustrates these examples with tokenization details.
 # -t: The letter set (e.g., "ab" for constructing a dataset with "a" and "b")
 # -c: The target character to count (e.g., "a")
 # -e: The experiment version or type (e.g., 1 for original string)
-python -m counting.count_experiment -n 1000 -l 20 -u 30 -t "ab" -c "a" -e 1 
+# -a: The agent to use (e.g., "claude" for Anthropic)
+python -m counting.count_experiment -n 1000 -l 20 -u 30 -t "ab" -c "a" -e 1 -a "claude"
 
 # Run an experiment using an existing dataset with supervised chain-of-thought
 # -d: Path to the existing dataset
