@@ -7,7 +7,7 @@ from util import claude_batch_request_template, ANTHROPIC_API_KEY, read_jsonl
 def create_requests(
         docs: dict[str, str],
         prompt: str,
-        model: str = "claude-3-5-sonnet-20240620",
+        model: str = "claude-3-5-sonnet-20240620", # The latest version of Claude 3.5 Sonnet at submission is 20241022. We don't guarantee the consistancy of performance between different versions.
         sys_message: str = "You are a helpful assistant.",
         filename: str = "batch_input.jsonl",
         max_tokens: int = 4096,
