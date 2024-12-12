@@ -1,4 +1,4 @@
-# Counting Conundrum: How Tokenization Impedes Basic Reasoning in Large Language Models
+# Counting Conundrum: Interplay of Tokenization and Chain of Thought in Inductive Reasoning
 
 This project investigates the impact of tokenization on the inductive counting tasks performed by large language models.  Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. Different large language models may use different tokenization methods, which can affect their performance on counting tasks.
 
