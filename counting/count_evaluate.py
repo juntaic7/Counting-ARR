@@ -86,19 +86,21 @@ def main():
                     pass
 
     differences = {}
-    correct_count = 0
+    correct = []
+    
     for idx, pred in preds.items():
         if pred == dataset[idx][args.content]:
-            correct_count += 1
+            correct.append(idx)
         else:
             difference = pred - dataset[idx][args.content]
             if difference not in differences:
                 differences[difference] = 0
             differences[difference] += 1
     
-    accuracy = correct_count / len(preds) if len(preds) > 0 else 0
+    accuracy = len(correct) / len(preds) if len(preds) > 0 else 0
     print(f"The final accuracy is: {accuracy:.2%}")
     print(f"Differences: {differences}")
+    print(f"Correct: {correct}")
 
     dirname = os.path.dirname(args.path)
     basename = os.path.basename(args.path) 
