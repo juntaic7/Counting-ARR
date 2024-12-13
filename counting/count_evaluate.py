@@ -61,7 +61,7 @@ def main():
                         preds[id] = 0
                 else:  
                     print(f"Warning: 'Result:' not found in response for ID {id}.")
-                    print(f"Completion: {repr(completion)}")
+                    #print(f"Completion: {repr(completion)}")
                     preds[id] = 0
         case "claude":
             if args.batch is not None:
@@ -75,7 +75,7 @@ def main():
                     last_result_index = completion.rfind("Result: ")
                     padding = len("Result: ")
                 else:  
-                    print(f"Completion: {repr(completion)}")
+                    #print(f"Completion: {repr(completion)}")
                     raise Exception(f"'Result:' not found in response for ID {id}. Please check the response and revise prompt template.")
                 
                 result_str = completion[last_result_index + padding:].strip()
