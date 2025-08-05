@@ -4,7 +4,7 @@ import json
 import os
 from agents.claude_agents import retrieve_results
 
-# The evaluation script for the counting experiment can be applied to the results from GPT/Claude/Qwen. Qwen has the same output format as GPT
+# The evaluation script for the counting experiment can be applied to the results from GPT/Claude/Qwen. Qwen has the same output format as GPT.
 def main():
     parser = argparse.ArgumentParser(description="Calculate accuracy.")
     parser.add_argument(
