@@ -1,0 +1,11 @@
+Reverse the list to a string format following the instructions below:
+
+1. Initialize an empty string called 'reversed'
+2. For each character in the input list:
+     - Remove the first (leftmost) character
+     - Add this character to the beginning of 'reversed'
+     - Display the remaining input list
+3. Once all characters are processed, 'reversed' will contain the reversed string. Return the reversed string in a dictionary format with the key 'Result'. For example, the result dictionary for input string "['h', 'e', 'l', 'l', 'o']" will be {'Result': 'olleh'}.
+
+Show the reverse process of the input list step by step, and conclude with the result dictionary.
+Input string: {{string}}

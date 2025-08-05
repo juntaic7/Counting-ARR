@@ -1,0 +1,3 @@
+Sort the string below in ascending order using insertion sort. Think step by step. Note that lower case characters are greater than upper case characters. Convert the sorted characters into a single string, and store the result in a dictionary with the key 'Result.' For example, given the string '2CsU4bSc', the sorted result should be '24CSUbcs' and should be stored as {'Result': '24CSUbcs'}.
+
+String: {{string}}

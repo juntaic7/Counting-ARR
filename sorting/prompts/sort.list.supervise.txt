@@ -1,0 +1,8 @@
+Sort the list below in ascending order using insertion sort following the steps below. Note that lower case characters are greater than upper case characters.
+1. Start by creating an empty list for sorted characters.
+2. For each step:
+     - Specify which character you're currently looking and insert the character to the correct place in sorted list.
+     - Display both the original list (showing characters remaining) and sorted list after each step.
+3. Conbine the sorted list to a single string. Return the sorted string in a dictionary format with the key 'Result'. For example, the result dictionary for input list "['2', 'C', 's', 'U', '4', 'b', 'S', 'c']" will be {'Result': '24CSUbcs'}.
+
+List: {{string}}

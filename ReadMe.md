@@ -1,10 +1,12 @@
 # Theoretical Barriers of Modern Tokenizer on Symbolic and Arithmetic Computation in Language Models
 
-This project investigates the impact of tokenization on the inductive counting tasks performed by large language models.  Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. Different large language models may use different tokenization methods, which can affect their performance on counting tasks.
+This project investigates the impact of tokenization on the inductive counting, sorting and reversing tasks performed by large language models.  Tokenization, the process of converting a sequence of characters into tokens, can significantly affect how well models perform on tasks requiring the counting of characters or tokens. Different large language models may use different tokenization methods, which can affect their performance on counting tasks.
+
+The workflow below demonstrates the experiment process using counting as an example. Reversing and sorting experiments follow the indentical procedure.
 
 ![Tokenization Example Long](./tokenizations_long.png)
 
-## Counting Example
+## Example: Counting
 
 The following example demonstrates how various tokenization approaches can impact the character counting (e.g., counting the number of 'a's) in a simple string.
 
@@ -28,7 +30,7 @@ The figure below illustrates these examples with tokenization details.
 
 ![Tokenization Example](./tokenizations.png)
 
-## Examples of Running Experiments
+### Examples of Running Experiments
 
 ```bash
 # Run an experiment with a newly generated dataset
@@ -57,7 +59,7 @@ python -m counting.count_experiment -d "path_to_dataset" -c "a" -e 3 -s
 - **(c) Comma-separated String**: `-e 2`
 - **(d) Quoted String**: `-e 3`
 
-## Examples of Evaluating Experiment Results
+### Examples of Evaluating Experiment Results
 
 ```bash
 # Evaluate experiment results

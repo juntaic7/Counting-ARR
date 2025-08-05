@@ -1,0 +1,3 @@
+Reverse the string provided below. Think step  by step. Output the final result in a dictionary with the key 'Result'. For instance, if the input string is 'iamhappy', the output would be: {'Result': 'yppahmai'}. The input string may contain punctuations, do not add them into reversed string.
+
+Input string: {{string}}

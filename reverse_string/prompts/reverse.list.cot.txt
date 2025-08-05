@@ -1,0 +1,3 @@
+Reverse the list provided below into a string format. Think step  by step. Output the final result in a dictionary with the key 'Result'. For instance, if the input list is "['i', 'a', 'm', 'h', 'a', 'p', 'p', 'y']", the output would be: {'Result': 'yppahmai'}.
+
+Input list: {{string}}
